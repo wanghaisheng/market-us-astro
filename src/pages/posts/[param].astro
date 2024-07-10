@@ -1,0 +1,28 @@
+---
+import Layout from "@layouts/PageLayout.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+import { FullPostDetails } from "@components/posts/FullPostDetails";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { param } = Astro.params;
+---
+
+<Layout
+    pageTitle={t("pageTitles.userViewCreatorAccount") + " " + param}
+    pageDescription={t("pageTitles.userViewCreatorAccount") +
+        " " +
+        param +
+        " " +
+        t("pageDescriptions.userViewCreatorAccount")}
+>
+    <div
+        class="border border-border1 dark:border-border1-DM rounded flex flex-col items-center w-full h-full mb-4"
+    >
+        <div class="w-full">
+            <FullPostDetails client:only="solid-js" postId={param} />
+        </div>
+    </div>
+</Layout>

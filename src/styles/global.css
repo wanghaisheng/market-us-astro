@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn-primary {
+        @apply max-h-14 cursor-pointer rounded-full bg-btn1 px-4 py-2 font-bold text-btn1Text shadow-md active:animate-click dark:bg-btn1-DM dark:text-btn1Text-DM md:text-[1vw];
+    }
+
+    .btn-secondary {
+        @apply max-h-14 rounded-full border border-btn1-DM fill-none px-4 py-2 text-btn1 shadow-md active:animate-click dark:text-btn1-DM md:text-[1vw];
+    }
+
+    .btn-disabled {
+        @apply max-h-14 rounded-full bg-gray-500 px-4 py-2 font-bold text-btn1Text-DM md:text-[1vw];
+    }
+
+    .btn-cart {
+        @apply max-h-14 w-full rounded-full bg-btn1 py-1 text-btn1Text dark:bg-btn1-DM dark:text-btn1Text-DM md:w-auto md:px-2 md:py-1 md:text-[1.25vw] md:font-bold;
+    }
+
+    .btn-cart-disabled {
+        @apply max-h-14 w-full rounded-full bg-gray-500 py-1 text-btn1Text-DM md:w-auto md:px-2 md:py-1 md:text-[1.25vw] md:font-bold;
+    }
+
+    button > * {
+        @apply pointer-events-none;
+    }
+
+    .selected {
+        @apply border-b-4 border-highlight1 dark:border-highlight1-DM;
+    }
+
+    .clearBtn {
+        @apply mx-1.5 flex h-4 w-4 items-center justify-center rounded-full border border-alert1 p-2 text-alert1 dark:border-alert1-DM dark:text-alert1-DM;
+    }
+
+    .clearBtnRectangle {
+        @apply m-1 flex rounded border border-gray-600 px-1 text-gray-600 drop-shadow-md dark:border-gray-300 dark:text-gray-300;
+    }
+
+    .socialBtn {
+        @apply flex w-full items-center rounded-lg border border-border2 px-1 py-2 text-ptext2 dark:border-border2-DM dark:text-ptext2-DM;
+    }
+
+    .gradeHomeSelectBtn {
+        @apply my-2 mr-2 flex h-20 w-20 items-center justify-center rounded-full border-2 border-border1 text-ptext1 dark:border-border1-DM dark:text-ptext1-DM md:h-24 md:w-24 md:border-4;
+    }
+
+    #user-profile-ratings-div {
+        unicode-bidi: bidi-override;
+        direction: rtl;
+    }
+
+    #user-profile-ratings-div > span {
+        display: inline-block;
+        position: relative;
+        width: 1.1em;
+        font-size: 18px;
+    }
+
+    #user-profile-ratings-div > span:hover:before,
+    #user-profile-ratings-div > span:hover ~ span:before {
+        content: "\2605";
+        position: absolute;
+    }
+}
+
+@layer utilities {
+    .iti {
+        width: 100%;
+    }
+}
